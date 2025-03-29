@@ -1,0 +1,65 @@
+/* Product Badges Styling */
+.product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.product-badge.sale {
+    background-color: #ff5874;
+    color: white;
+}
+
+.product-badge.new {
+    background-color: #28a745;
+    color: white;
+}
+
+.product-badge.featured {
+    background-color: #4543e7;
+    color: white;
+}
+
+.product-badge.bestseller {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+/* Multiple badges positioning */
+.product-badge:nth-of-type(2) {
+    top: 40px;
+}
+
+.product-badge:nth-of-type(3) {
+    top: 70px;
+}
+
+/* Animation for badges */
+@keyframes badgeAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-badge {
+    animation: badgeAppear 0.3s ease forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .product-badge {
+        font-size: 0.65rem;
+        padding: 4px 8px;
+    }
+} 

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our wide range of electronics at ShopHub - from smartphones and laptops to audio equipment and smart home devices.">
+    <title>Electronics | ShopHub</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>ShopHub</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for electronics, brands and more...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="#" class="login-btn">Login</a></li>
+                        <li class="cart-icon"><a href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner for Electronics -->
+    <section class="category-hero electronics-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Cutting-Edge Electronics</h1>
+                <p>Discover the latest in technology and smart devices</p>
+                <a href="#electronics-grid" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electronics Category Navigation -->
+    <section class="subcategory-nav">
+        <div class="container">
+            <div class="subcategory-links">
+                <a href="#smartphones" class="subcategory-link">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Smartphones</span>
+                </a>
+                <a href="#laptops" class="subcategory-link">
+                    <i class="fas fa-laptop"></i>
+                    <span>Laptops</span>
+                </a>
+                <a href="#audio" class="subcategory-link">
+                    <i class="fas fa-headphones"></i>
+                    <span>Audio</span>
+                </a>
+                <a href="#wearables" class="subcategory-link">
+                    <i class="fas fa-watch"></i>
+                    <span>Wearables</span>
+                </a>
+                <a href="#cameras" class="subcategory-link">
+                    <i class="fas fa-camera"></i>
+                    <span>Cameras</span>
+                </a>
+                <a href="#smart-home" class="subcategory-link">
+                    <i class="fas fa-home"></i>
+                    <span>Smart Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Electronics -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Electronics</h2>
+            <div class="product-container" id="featured-electronics">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Electronics Grid -->
+    <section class="products-section" id="electronics-grid">
+        <div class="container">
+            <h2 class="section-title">All Electronics</h2>
+            
+            <div class="products-header">
+                <div class="results-count">
+                    <span id="electronics-count">0</span> products found
+                </div>
+                <div class="sort-options">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low-high">Price: Low to High</option>
+                        <option value="price-high-low">Price: High to Low</option>
+                        <option value="name-a-z">Name: A to Z</option>
+                        <option value="name-z-a">Name: Z to A</option>
+                        <option value="rating">Top Rated</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-grid-container">
+                <div class="filter-sidebar">
+                    <h2>Filters</h2>
+                    
+                    <div class="filter-group">
+                        <h3>Sub-Categories</h3>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="all-electronics" checked>
+                            <label for="all-electronics">All Electronics</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="smartphones">
+                            <label for="smartphones">Smartphones</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="laptops">
+                            <label for="laptops">Laptops & Computers</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="audio-devices">
+                            <label for="audio-devices">Audio Devices</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="wearable-tech">
+                            <label for="wearable-tech">Wearable Tech</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="camera-photo">
+                            <label for="camera-photo">Cameras & Photography</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="smart-home-devices">
+                            <label for="smart-home-devices">Smart Home</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Price Range</h3>
+                        <div class="price-range">
+                            <input type="number" id="min-price" placeholder="Min">
+                            <input type="number" id="max-price" placeholder="Max">
+                        </div>
+                        <button class="btn-small" id="apply-price">Apply</button>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Brand</h3>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="all-brands" checked>
+                            <label for="all-brands">All Brands</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="apple">
+                            <label for="apple">Apple</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="samsung">
+                            <label for="samsung">Samsung</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="sony">
+                            <label for="sony">Sony</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="bose">
+                            <label for="bose">Bose</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="google">
+                            <label for="google">Google</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="dell">
+                            <label for="dell">Dell</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Features</h3>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="wireless">
+                            <label for="wireless">Wireless</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="bluetooth">
+                            <label for="bluetooth">Bluetooth</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="noise-cancelling">
+                            <label for="noise-cancelling">Noise Cancelling</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="waterproof">
+                            <label for="waterproof">Waterproof</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="voice-control">
+                            <label for="voice-control">Voice Control</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Availability</h3>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="in-stock" checked>
+                            <label for="in-stock">In Stock</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="on-sale">
+                            <label for="on-sale">On Sale</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="new-arrivals">
+                            <label for="new-arrivals">New Arrivals</label>
+                        </div>
+                    </div>
+                    
+                    <button class="btn" id="reset-filters">Reset Filters</button>
+                </div>
+                
+                <div class="products-grid" id="electronics-products-grid">
+                    <!-- Products will be loaded from JavaScript -->
+                </div>
+            </div>
+            
+            <div class="pagination" id="electronics-pagination">
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link"><i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Selling Electronics -->
+    <section id="smartphones" class="trending-products">
+        <div class="container">
+            <h2 class="section-title">Top Smartphones</h2>
+            <div class="product-container" id="smartphones-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Laptops Section -->
+    <section id="laptops" class="trending-products">
+        <div class="container">
+            <h2 class="section-title">Laptops & Computers</h2>
+            <div class="product-container" id="laptops-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Section -->
+    <section id="audio" class="trending-products">
+        <div class="container">
+            <h2 class="section-title">Audio Equipment</h2>
+            <div class="product-container" id="audio-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Wearables Section -->
+    <section id="wearables" class="trending-products">
+        <div class="container">
+            <h2 class="section-title">Wearable Technology</h2>
+            <div class="product-container" id="wearables-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cameras Section -->
+    <section id="cameras" class="trending-products">
+        <div class="container">
+            <h2 class="section-title">Cameras & Photography</h2>
+            <div class="product-container" id="cameras-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Home Section -->
+    <section id="smart-home" class="trending-products">
+        <div class="container">
+            <h2 class="section-title">Smart Home Devices</h2>
+            <div class="product-container" id="smart-home-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Blog & Reviews -->
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Tech News & Reviews</h2>
+            <div class="blog-container">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1550029402-226115b7c579" alt="Latest Smartphone Review">
+                    <div class="blog-content">
+                        <span class="blog-date">June 15, 2023</span>
+                        <h3>Top 5 Smartphones of 2023</h3>
+                        <p>Our experts review the best smartphones on the market today, comparing camera quality, performance, and value.</p>
+                        <a href="#" class="btn-small">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed" alt="Smart Home Guide">
+                    <div class="blog-content">
+                        <span class="blog-date">June 10, 2023</span>
+                        <h3>Building Your Smart Home Ecosystem</h3>
+                        <p>Learn how to create a seamless smart home experience with compatible devices and automation tips.</p>
+                        <a href="#" class="btn-small">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1546027032-5f49894ab09f" alt="Audio Technology">
+                    <div class="blog-content">
+                        <span class="blog-date">June 5, 2023</span>
+                        <h3>The Evolution of Noise Cancellation</h3>
+                        <p>Discover how noise cancelling technology has advanced and which headphones deliver the best experience.</p>
+                        <a href="#" class="btn-small">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Tech Newsletter</h2>
+                <p>Get the latest tech news, reviews, and exclusive deals</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ShopHub</h3>
+                    <p>Your one-stop destination for all your shopping needs. We offer quality products at affordable prices.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="cart.html">View Cart</a></li>
+                        <li><a href="#">Track My Order</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> info@shophub.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 ShopHub. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login/Register Modals -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+        </div>
+    </div>
+
+    <div class="modal" id="register-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create Account</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
+    </div>
+
+    <script src="../JAVASCRIPT/products.js"></script>
+    <script src="../JAVASCRIPT/electronics.js"></script>
+    <script src="../JAVASCRIPT/app.js"></script>
+</body>
+</html> 

@@ -1,0 +1,132 @@
+/* Product specific styling */
+
+/* Number input styling - fixing -moz-appearance issue */
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Quantity control styling */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 140px;
+}
+
+.quantity-btn {
+    width: 40px;
+    height: 40px;
+    background-color: #f5f5f5;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.quantity-btn:active {
+    background-color: #d0d0d0;
+}
+
+.quantity-input {
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    font-size: 1rem;
+    border: none;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    outline: none;
+}
+
+/* Product images styling */
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-thumbnail-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.product-thumbnail {
+    width: 70px;
+    height: 70px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.product-thumbnail.active {
+    border-color: var(--primary);
+}
+
+.product-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Product info styling */
+.product-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.product-rating .stars {
+    display: flex;
+    color: #ffc107;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.current-price {
+    color: var(--primary);
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1.1rem;
+} 

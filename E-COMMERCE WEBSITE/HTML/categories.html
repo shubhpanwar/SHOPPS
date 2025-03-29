@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore all product categories at ShopHub - electronics, fashion, home goods, and more all in one place.">
+    <title>Categories | ShopHub</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    <style>
+        .categories-section {
+            padding: 60px 0;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .category-box {
+            position: relative;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .category-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            transition: background 0.3s ease;
+        }
+        
+        .category-box:hover .category-overlay {
+            background: linear-gradient(to top, rgba(var(--primary-rgb), 0.8), transparent);
+        }
+        
+        .category-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .category-count {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .category-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+        
+        .featured-categories {
+            margin-bottom: 60px;
+        }
+        
+        .category-section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .category-section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .category-section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .all-categories .categories-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .all-categories .category-box {
+            height: 250px;
+        }
+        
+        @media (max-width: 992px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .all-categories .categories-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .all-categories .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .categories-grid,
+            .all-categories .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>ShopHub</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for categories, products, and more...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html" class="active">Categories</a></li>
+                        <li><a href="#" class="login-btn">Login</a></li>
+                        <li class="cart-icon"><a href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Categories Hero -->
+    <section class="categories-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Explore Our Categories</h1>
+                <p>Find exactly what you're looking for with our organized shopping experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Categories Grid -->
+    <section class="main-categories">
+        <div class="container">
+            <h2 class="section-title">Shop By Department</h2>
+            <div class="categories-grid">
+                <!-- Electronics -->
+                <div class="category-box">
+                    <a href="electronics.html">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03" alt="Electronics">
+                            <div class="category-overlay">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                        </div>
+                        <div class="category-title">
+                            <h3>Electronics</h3>
+                            <p>Gadgets & Devices</p>
+                        </div>
+                    </a>
+            </div>
+            
+                <!-- Fashion -->
+                <div class="category-box">
+                    <a href="fashion.html">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b" alt="Fashion">
+                            <div class="category-overlay">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                        </div>
+                        <div class="category-title">
+                            <h3>Fashion</h3>
+                            <p>Clothing & Accessories</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Home & Kitchen -->
+                <div class="category-box">
+                    <a href="home-kitchen.html">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1526057565006-20beab8dd2ed" alt="Home & Kitchen">
+                            <div class="category-overlay">
+                                <i class="fas fa-home"></i>
+                            </div>
+                        </div>
+                        <div class="category-title">
+                            <h3>Home & Kitchen</h3>
+                            <p>Appliances & Decor</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Sports & Outdoors -->
+                <div class="category-box">
+                    <a href="sports.html">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b" alt="Sports & Outdoors">
+                            <div class="category-overlay">
+                                <i class="fas fa-running"></i>
+                            </div>
+                        </div>
+                        <div class="category-title">
+                            <h3>Sports & Outdoors</h3>
+                            <p>Equipment & Gear</p>
+                        </div>
+                    </a>
+            </div>
+            
+                <!-- Beauty & Personal Care -->
+                <div class="category-box">
+                    <a href="beauty.html">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b" alt="Beauty & Personal Care">
+                            <div class="category-overlay">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                        </div>
+                        <div class="category-title">
+                            <h3>Beauty & Personal Care</h3>
+                            <p>Cosmetics & Skincare</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Books & Stationery -->
+                <div class="category-box">
+                    <a href="books.html">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6" alt="Books & Stationery">
+                            <div class="category-overlay">
+                                <i class="fas fa-book"></i>
+                            </div>
+                        </div>
+                        <div class="category-title">
+                            <h3>Books & Stationery</h3>
+                            <p>Reading & Writing</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electronics Subcategories -->
+    <section class="subcategories-section">
+        <div class="container">
+            <h2 class="section-title">Electronics Categories</h2>
+            <div class="subcategories-list">
+                <a href="electronics.html#smartphones" class="subcategory-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Smartphones</span>
+                </a>
+                <a href="electronics.html#laptops" class="subcategory-item">
+                    <i class="fas fa-laptop"></i>
+                    <span>Laptops</span>
+                </a>
+                <a href="electronics.html#audio" class="subcategory-item">
+                    <i class="fas fa-headphones"></i>
+                    <span>Audio</span>
+                </a>
+                <a href="electronics.html#wearables" class="subcategory-item">
+                    <i class="fas fa-watch"></i>
+                    <span>Wearables</span>
+                </a>
+                <a href="electronics.html#cameras" class="subcategory-item">
+                    <i class="fas fa-camera"></i>
+                    <span>Cameras</span>
+                </a>
+                <a href="electronics.html#smart-home" class="subcategory-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Smart Home</span>
+                </a>
+                <a href="electronics.html" class="subcategory-item">
+                    <i class="fas fa-tv"></i>
+                    <span>TVs</span>
+                </a>
+                <a href="electronics.html" class="subcategory-item">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Gaming</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fashion Subcategories -->
+    <section class="subcategories-section">
+        <div class="container">
+            <h2 class="section-title">Fashion Categories</h2>
+            <div class="subcategories-list">
+                <a href="fashion.html#mens" class="subcategory-item">
+                    <i class="fas fa-male"></i>
+                    <span>Men's Fashion</span>
+                </a>
+                <a href="fashion.html#womens" class="subcategory-item">
+                    <i class="fas fa-female"></i>
+                    <span>Women's Fashion</span>
+                </a>
+                <a href="fashion.html#kids" class="subcategory-item">
+                    <i class="fas fa-child"></i>
+                    <span>Kids' Fashion</span>
+                </a>
+                <a href="fashion.html#shoes" class="subcategory-item">
+                    <i class="fas fa-shoe-prints"></i>
+                    <span>Footwear</span>
+                </a>
+                <a href="fashion.html#accessories" class="subcategory-item">
+                    <i class="fas fa-gem"></i>
+                    <span>Accessories</span>
+                </a>
+                <a href="fashion.html#seasonal" class="subcategory-item">
+                    <i class="fas fa-sun"></i>
+                    <span>Seasonal</span>
+                </a>
+                <a href="fashion.html" class="subcategory-item">
+                    <i class="fas fa-ring"></i>
+                    <span>Jewelry</span>
+                </a>
+                <a href="fashion.html" class="subcategory-item">
+                    <i class="fas fa-glasses"></i>
+                    <span>Eyewear</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Categories Banner -->
+    <section class="trending-categories">
+        <div class="container">
+            <h2 class="section-title">Trending Categories</h2>
+            <div class="trending-container">
+                <div class="trending-category">
+                    <img src="https://images.unsplash.com/photo-1612444530582-fc66183b16f4" alt="Wireless Earbuds">
+                    <div class="trending-content">
+                        <h3>Wireless Earbuds</h3>
+                        <p>Up to 40% off</p>
+                        <a href="electronics.html#audio" class="btn-small">Shop Now</a>
+                    </div>
+                </div>
+                <div class="trending-category">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f" alt="Women's Fashion">
+                    <div class="trending-content">
+                        <h3>Summer Collection</h3>
+                        <p>New arrivals</p>
+                        <a href="fashion.html#seasonal" class="btn-small">Shop Now</a>
+                    </div>
+                </div>
+                <div class="trending-category">
+                    <img src="https://images.unsplash.com/photo-1607354175781-c9c404940c87" alt="Smart Home">
+                    <div class="trending-content">
+                        <h3>Smart Home</h3>
+                        <p>Starting at ₹1,999</p>
+                        <a href="electronics.html#smart-home" class="btn-small">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home & Kitchen Subcategories -->
+    <section class="subcategories-section">
+        <div class="container">
+            <h2 class="section-title">Home & Kitchen Categories</h2>
+            <div class="subcategories-list">
+                <a href="home-kitchen.html" class="subcategory-item">
+                    <i class="fas fa-couch"></i>
+                    <span>Furniture</span>
+                </a>
+                <a href="home-kitchen.html" class="subcategory-item">
+                    <i class="fas fa-blender"></i>
+                    <span>Appliances</span>
+                </a>
+                <a href="home-kitchen.html" class="subcategory-item">
+                    <i class="fas fa-utensils"></i>
+                    <span>Cookware</span>
+                </a>
+                <a href="home-kitchen.html" class="subcategory-item">
+                    <i class="fas fa-bed"></i>
+                    <span>Bedding</span>
+                </a>
+                <a href="home-kitchen.html" class="subcategory-item">
+                    <i class="fas fa-bath"></i>
+                    <span>Bath</span>
+                </a>
+                <a href="home-kitchen.html" class="subcategory-item">
+                    <i class="fas fa-paint-roller"></i>
+                    <span>Home Decor</span>
+                </a>
+                <a href="home-kitchen.html" class="subcategory-item">
+                    <i class="fas fa-broom"></i>
+                    <span>Cleaning</span>
+                </a>
+                <a href="home-kitchen.html" class="subcategory-item">
+                    <i class="fas fa-coffee"></i>
+                    <span>Dining</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Deals -->
+    <section class="category-deals">
+        <div class="container">
+            <h2 class="section-title">Deals By Category</h2>
+            <div class="deals-container">
+                <div class="deal-card">
+                    <div class="deal-badge">SAVE 30%</div>
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Footwear Deals">
+                    <div class="deal-content">
+                        <h3>Footwear</h3>
+                        <p>Premium brands at discounted prices</p>
+                        <a href="fashion.html#shoes" class="btn">View Deals</a>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">SAVE 25%</div>
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Smart Watch Deals">
+                    <div class="deal-content">
+                        <h3>Smart Watches</h3>
+                        <p>Latest technology at best prices</p>
+                        <a href="electronics.html#wearables" class="btn">View Deals</a>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">SAVE 40%</div>
+                    <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5" alt="Kitchen Appliance Deals">
+                    <div class="deal-content">
+                        <h3>Kitchen Appliances</h3>
+                        <p>Best deals on cookware and appliances</p>
+                        <a href="home-kitchen.html" class="btn">View Deals</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Guides -->
+    <section class="gift-guides">
+        <div class="container">
+            <h2 class="section-title">Shop By Occasion</h2>
+            <div class="guide-container">
+                <div class="guide-card">
+                    <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a" alt="Birthday Gifts">
+                    <div class="guide-content">
+                        <h3>Birthday Gifts</h3>
+                        <a href="#" class="btn-small">Explore</a>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <img src="https://images.unsplash.com/photo-1544284530-d0ba175a6919" alt="Anniversary Gifts">
+                    <div class="guide-content">
+                        <h3>Anniversary Gifts</h3>
+                        <a href="#" class="btn-small">Explore</a>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <img src="https://images.unsplash.com/photo-1511885663737-eea53f6d6187" alt="Wedding Gifts">
+                    <div class="guide-content">
+                        <h3>Wedding Gifts</h3>
+                        <a href="#" class="btn-small">Explore</a>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <img src="https://images.unsplash.com/photo-1610062070645-0700fb4c8773" alt="Holiday Gifts">
+                    <div class="guide-content">
+                        <h3>Holiday Gifts</h3>
+                        <a href="#" class="btn-small">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get exclusive offers, new arrivals, and insider discounts</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ShopHub</h3>
+                    <p>Your one-stop destination for all your shopping needs. We offer quality products at affordable prices.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="cart.html">View Cart</a></li>
+                        <li><a href="#">Track My Order</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> info@shophub.com</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 ShopHub. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login/Register Modals -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+        </div>
+    </div>
+
+    <div class="modal" id="register-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create Account</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
+    </div>
+
+    <script src="../JAVASCRIPT/products.js"></script>
+    <script src="../JAVASCRIPT/categories.js"></script>
+    <script src="../JAVASCRIPT/app.js"></script>
+</body>
+</html> 

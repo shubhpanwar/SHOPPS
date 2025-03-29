@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - You're Offline</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .offline-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 70vh;
+            padding: 20px;
+        }
+        
+        .offline-icon {
+            font-size: 64px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .offline-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .offline-message {
+            font-size: 16px;
+            color: #555;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+        
+        .offline-actions {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">ShopHub</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Offline Content -->
+    <div class="container">
+        <div class="offline-container">
+            <div class="offline-icon">
+                <i class="fas fa-wifi-slash"></i>
+            </div>
+            <h1 class="offline-title">You're Offline</h1>
+            <p class="offline-message">
+                It seems you're not connected to the internet. Some content may not be available.
+                Check your connection and try again.
+            </p>
+            <div class="offline-actions">
+                <button class="btn" onclick="window.location.reload()">
+                    <i class="fas fa-sync"></i> Retry
+                </button>
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fas fa-home"></i> Go to Homepage
+                </a>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <h2>You can still access:</h2>
+                <ul style="list-style: none; padding: 0; margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                    <li><a href="index.html" class="btn btn-sm">Home</a></li>
+                    <li><a href="products.html" class="btn btn-sm">Products</a></li>
+                    <li><a href="cart.html" class="btn btn-sm">Cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ShopHub</h3>
+                    <p>Your one-stop destination for all your shopping needs.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ShopHub. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Check connection status and try to reconnect
+        function checkConnection() {
+            if (navigator.onLine) {
+                document.querySelector('.offline-title').textContent = "You're back online!";
+                document.querySelector('.offline-message').textContent = "Redirecting you to the homepage...";
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 2000);
+            }
+        }
+        
+        // Listen for online event
+        window.addEventListener('online', checkConnection);
+        
+        // Check immediately in case we're already back online
+        checkConnection();
+    </script>
+</body>
+</html> 

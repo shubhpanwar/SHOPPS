@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the latest fashion trends at ShopHub - from casual wear to formal attire, accessories, and footwear for all styles and occasions.">
+    <title>Fashion | ShopHub</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>ShopHub</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for fashion, brands and more...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="#" class="login-btn">Login</a></li>
+                        <li class="cart-icon"><a href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner for Fashion -->
+    <section class="category-hero fashion-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Elevate Your Style</h1>
+                <p>Discover the latest trends in fashion</p>
+                <a href="#fashion-grid" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fashion Category Navigation -->
+    <section class="subcategory-nav">
+        <div class="container">
+            <div class="subcategory-links">
+                <a href="#mens" class="subcategory-link">
+                    <i class="fas fa-male"></i>
+                    <span>Men</span>
+                </a>
+                <a href="#womens" class="subcategory-link">
+                    <i class="fas fa-female"></i>
+                    <span>Women</span>
+                </a>
+                <a href="#kids" class="subcategory-link">
+                    <i class="fas fa-child"></i>
+                    <span>Kids</span>
+                </a>
+                <a href="#shoes" class="subcategory-link">
+                    <i class="fas fa-shoe-prints"></i>
+                    <span>Footwear</span>
+                </a>
+                <a href="#accessories" class="subcategory-link">
+                    <i class="fas fa-gem"></i>
+                    <span>Accessories</span>
+                </a>
+                <a href="#seasonal" class="subcategory-link">
+                    <i class="fas fa-sun"></i>
+                    <span>Seasonal</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Trends -->
+    <section class="trend-highlights">
+        <div class="container">
+            <h2 class="section-title">Current Fashion Trends</h2>
+            <div class="trend-container">
+                <div class="trend-card">
+                    <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8" alt="Summer Casual">
+                    <div class="trend-info">
+                        <h3>Summer Casual</h3>
+                        <p>Light fabrics in pastel colors</p>
+                        <a href="#" class="btn-small">Shop the Look</a>
+                    </div>
+                </div>
+                <div class="trend-card">
+                    <img src="https://images.unsplash.com/photo-1479064555552-3ef4979f8908" alt="Athleisure">
+                    <div class="trend-info">
+                        <h3>Athleisure</h3>
+                        <p>Sporty comfort meets style</p>
+                        <a href="#" class="btn-small">Shop the Look</a>
+                    </div>
+                </div>
+                <div class="trend-card">
+                    <img src="https://images.unsplash.com/photo-1549570652-97324981a6fd" alt="Vintage Vibes">
+                    <div class="trend-info">
+                        <h3>Vintage Vibes</h3>
+                        <p>Retro styles making a comeback</p>
+                        <a href="#" class="btn-small">Shop the Look</a>
+                    </div>
+                </div>
+                <div class="trend-card">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae" alt="Minimalist">
+                    <div class="trend-info">
+                        <h3>Minimalist</h3>
+                        <p>Clean lines and neutral tones</p>
+                        <a href="#" class="btn-small">Shop the Look</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Fashion -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Fashion</h2>
+            <div class="product-container" id="featured-fashion">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Banner -->
+    <section class="special-offers">
+        <div class="container">
+            <div class="offer-banner">
+                <div class="offer-content">
+                    <h2>NEW ARRIVALS</h2>
+                    <h3>Summer Collection 2023</h3>
+                    <p>Get ready for the season with fresh styles</p>
+                    <a href="#" class="btn">Shop Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Fashion Products Grid -->
+    <section class="products-section" id="fashion-grid">
+        <div class="container">
+            <h2 class="section-title">All Fashion</h2>
+            
+            <div class="products-header">
+                <div class="results-count">
+                    <span id="fashion-count">0</span> products found
+                </div>
+                <div class="sort-options">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low-high">Price: Low to High</option>
+                        <option value="price-high-low">Price: High to Low</option>
+                        <option value="name-a-z">Name: A to Z</option>
+                        <option value="name-z-a">Name: Z to A</option>
+                        <option value="rating">Top Rated</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-grid-container">
+                <div class="filter-sidebar">
+                    <h2>Filters</h2>
+                    
+                    <div class="filter-group">
+                        <h3>Categories</h3>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="all-fashion" checked>
+                            <label for="all-fashion">All Fashion</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="mens-clothing">
+                            <label for="mens-clothing">Men's Clothing</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="womens-clothing">
+                            <label for="womens-clothing">Women's Clothing</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="kids-clothing">
+                            <label for="kids-clothing">Kids' Clothing</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="footwear">
+                            <label for="footwear">Footwear</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="fashion-accessories">
+                            <label for="fashion-accessories">Accessories</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Size</h3>
+                        <div class="size-filters">
+                            <span class="size-filter">XS</span>
+                            <span class="size-filter">S</span>
+                            <span class="size-filter">M</span>
+                            <span class="size-filter">L</span>
+                            <span class="size-filter">XL</span>
+                            <span class="size-filter">XXL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Price Range</h3>
+                        <div class="price-range">
+                            <input type="number" id="min-price" placeholder="Min">
+                            <input type="number" id="max-price" placeholder="Max">
+                        </div>
+                        <button class="btn-small" id="apply-price">Apply</button>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Brand</h3>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="all-brands" checked>
+                            <label for="all-brands">All Brands</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="nike">
+                            <label for="nike">Nike</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="adidas">
+                            <label for="adidas">Adidas</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="zara">
+                            <label for="zara">Zara</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="h-m">
+                            <label for="h-m">H&M</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="levis">
+                            <label for="levis">Levi's</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Color</h3>
+                        <div class="color-filters">
+                            <span class="color-filter black"></span>
+                            <span class="color-filter white"></span>
+                            <span class="color-filter red"></span>
+                            <span class="color-filter blue"></span>
+                            <span class="color-filter green"></span>
+                            <span class="color-filter yellow"></span>
+                            <span class="color-filter purple"></span>
+                            <span class="color-filter gray"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Availability</h3>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="in-stock" checked>
+                            <label for="in-stock">In Stock</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="on-sale">
+                            <label for="on-sale">On Sale</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="new-arrivals">
+                            <label for="new-arrivals">New Arrivals</label>
+                        </div>
+                    </div>
+                    
+                    <button class="btn" id="reset-filters">Reset Filters</button>
+                </div>
+                
+                <div class="products-grid" id="fashion-products-grid">
+                    <!-- Products will be loaded from JavaScript -->
+                </div>
+            </div>
+            
+            <div class="pagination" id="fashion-pagination">
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link"><i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Men's Fashion -->
+    <section id="mens" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Men's Fashion</h2>
+            <div class="product-container" id="mens-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            <div class="view-more-container">
+                <a href="#" class="btn">View All Men's Fashion</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Women's Fashion -->
+    <section id="womens" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Women's Fashion</h2>
+            <div class="product-container" id="womens-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            <div class="view-more-container">
+                <a href="#" class="btn">View All Women's Fashion</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Style Guide -->
+    <section class="style-guide">
+        <div class="container">
+            <h2 class="section-title">Season's Style Guide</h2>
+            <div class="style-guide-container">
+                <div class="style-card">
+                    <img src="https://images.unsplash.com/photo-1607345366928-199ea26cfe3e" alt="Office Chic">
+                    <div class="style-card-content">
+                        <h3>Office Chic</h3>
+                        <p>Elevate your work wardrobe with professional pieces that transition from boardroom to dinner.</p>
+                        <a href="#" class="btn-small">Explore Guide</a>
+                    </div>
+                </div>
+                <div class="style-card">
+                    <img src="https://images.unsplash.com/photo-1506634572416-48cdfe530110" alt="Weekend Casual">
+                    <div class="style-card-content">
+                        <h3>Weekend Casual</h3>
+                        <p>Comfortable yet stylish options for your weekend adventures and relaxation.</p>
+                        <a href="#" class="btn-small">Explore Guide</a>
+                    </div>
+                </div>
+                <div class="style-card">
+                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c" alt="Evening Glamour">
+                    <div class="style-card-content">
+                        <h3>Evening Glamour</h3>
+                        <p>Make a statement with elegant evening wear for special occasions and events.</p>
+                        <a href="#" class="btn-small">Explore Guide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kids Fashion -->
+    <section id="kids" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Kids' Fashion</h2>
+            <div class="product-container" id="kids-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            <div class="view-more-container">
+                <a href="#" class="btn">View All Kids' Fashion</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footwear -->
+    <section id="shoes" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Footwear Collection</h2>
+            <div class="product-container" id="footwear-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            <div class="view-more-container">
+                <a href="#" class="btn">View All Footwear</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accessories -->
+    <section id="accessories" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Fashion Accessories</h2>
+            <div class="product-container" id="accessories-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            <div class="view-more-container">
+                <a href="#" class="btn">View All Accessories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Collection -->
+    <section id="seasonal" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Summer Collection</h2>
+            <div class="product-container" id="seasonal-container">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            <div class="view-more-container">
+                <a href="#" class="btn">View All Seasonal Items</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fashion Blog -->
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Fashion Blog</h2>
+            <div class="blog-container">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b" alt="Summer Fashion Trends">
+                    <div class="blog-content">
+                        <span class="blog-date">June 18, 2023</span>
+                        <h3>10 Must-Have Summer Fashion Items</h3>
+                        <p>Our fashion experts share the essential pieces for a stylish summer wardrobe this season.</p>
+                        <a href="#" class="btn-small">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050" alt="Sustainable Fashion">
+                    <div class="blog-content">
+                        <span class="blog-date">June 12, 2023</span>
+                        <h3>The Rise of Sustainable Fashion</h3>
+                        <p>Discover eco-friendly brands and how to build a sustainable wardrobe without sacrificing style.</p>
+                        <a href="#" class="btn-small">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9" alt="Vintage Styling">
+                    <div class="blog-content">
+                        <span class="blog-date">June 7, 2023</span>
+                        <h3>How to Style Vintage Pieces</h3>
+                        <p>Learn how to incorporate vintage finds into your modern wardrobe for a unique personal style.</p>
+                        <a href="#" class="btn-small">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Fashion Newsletter</h2>
+                <p>Get style tips, trend alerts, and exclusive offers</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ShopHub</h3>
+                    <p>Your one-stop destination for all your shopping needs. We offer quality products at affordable prices.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="cart.html">View Cart</a></li>
+                        <li><a href="#">Track My Order</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> info@shophub.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 ShopHub. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login/Register Modals -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+        </div>
+    </div>
+
+    <div class="modal" id="register-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create Account</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
+    </div>
+
+    <script src="../JAVASCRIPT/products.js"></script>
+    <script src="../JAVASCRIPT/fashion.js"></script>
+    <script src="../JAVASCRIPT/app.js"></script>
+</body>
+</html> 
